@@ -18,4 +18,8 @@ ROOT=/data/biohub/20180325_Buffalo_HiC
 RAWDATA=${ROOT}/0_rawData/fastq
 FQCDIR=${ROOT}/0_rawData/FastQC
 
-fastqc -t 6 -o ${FQCDIR} --noextract ${RAWDATA}/*gz
+## Adapters
+ADAPTERS=${ROOT}/0_rawData/adapters/combinedAdapters.fa
+
+# Run fastqc
+fastqc -t 6 -a ${ADAPTERS} -o ${FQCDIR} --noextract ${RAWDATA}/*gz
