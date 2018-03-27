@@ -1,0 +1,23 @@
+java -Djava.library.path=/apps/software/BBMap/36.62-intel-2017.01-Java-1.8.0_121/jni/ -ea -Xmx1000m -Xmx1000m -cp /apps/software/BBMap/36.62-intel-2017.01-Java-1.8.0_121/current/ jgi.BBMerge in1=/data/biohub/20180325_Buffalo_HiC/0_rawData/fastq/2.Illumina_indexing-35.CP-4937_R1.fastq.gz in2=/data/biohub/20180325_Buffalo_HiC/0_rawData/fastq/2.Illumina_indexing-35.CP-4937_R2.fastq.gz outa=/data/biohub/20180325_Buffalo_HiC/0_rawData/adapters/2.Illumina_indexing-35.CP-4937_adapters.fa
+Executing jgi.BBMerge [in1=/data/biohub/20180325_Buffalo_HiC/0_rawData/fastq/2.Illumina_indexing-35.CP-4937_R1.fastq.gz, in2=/data/biohub/20180325_Buffalo_HiC/0_rawData/fastq/2.Illumina_indexing-35.CP-4937_R2.fastq.gz, outa=/data/biohub/20180325_Buffalo_HiC/0_rawData/adapters/2.Illumina_indexing-35.CP-4937_adapters.fa]
+
+BBMerge version 36.62
+Adapters counted: 826669
+Total time: 709.514 seconds.
+
+Pairs:               	168626953
+Joined:              	70976020   	42.091%
+Ambiguous:           	97604800   	57.882%
+No Solution:         	46133   	0.027%
+Too Short:           	0       	0.000%
+
+Avg Insert:          	249.0
+Standard Deviation:  	29.1
+Mode:                	262
+
+Insert range:        	35 - 293
+90th percentile:     	283
+75th percentile:     	271
+50th percentile:     	251
+25th percentile:     	231
+10th percentile:     	217

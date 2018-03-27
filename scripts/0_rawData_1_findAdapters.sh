@@ -4,8 +4,8 @@
 #SBATCH -n 1
 #SBATCH --time=1:00:00
 #SBATCH --mem=32GB
-#SBATCH -o /data/biohub/20180325_Buffalo_HiC/slurm/0_rawData_findAdapters_%j.out
-#SBATCH -e /data/biohub/20180325_Buffalo_HiC/slurm/0_rawData_findAdapters_%j.err
+#SBATCH -o /data/biohub/20180325_Buffalo_HiC/slurm/0_rawData_1_findAdapters_%j.out
+#SBATCH -e /data/biohub/20180325_Buffalo_HiC/slurm/0_rawData_1_findAdapters_%j.err
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=stephen.pederson@adelaide.edu.au
@@ -36,12 +36,13 @@ MERGED=${RAWDIR}/adapters/combinedAdapters.fa
 if [ -e ${MERGED} ]
 then
     echo "Previous version of ${MERGED} found. This will be deleted"
+    rm ${MERGED}
 else
-    echo "No eisting version of ${MERGED} found. Creating a blank file.
+    echo "No existing version of ${MERGED} found. Creating a blank file."
     touch ${MERGED}
 fi
 
-for f in ${RAWDIR}/adapters/*fa
+for f in ${RAWDIR}/adapters/2.Illumina*fa
   do 
     # Set each adapter as a tab separated name and sequence (for fastqc compatability)
     sed -n '1,2p' ${f} | sed -r 's/>//g' | perl -p -e 's/\n/\t/' >> ${MERGED}

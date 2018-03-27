@@ -19,7 +19,7 @@ RAWDATA=${ROOT}/0_rawData/fastq
 FQCDIR=${ROOT}/0_rawData/FastQC
 
 ## Adapters
-ADAPTERS=${ROOT}/0_rawData/adapters/combinedAdapters.fa
+ADAPTERS=${ROOT}/0_rawData/adapters/adapters.txt
 
 # Run fastqc
 fastqc -t 6 -a ${ADAPTERS} -o ${FQCDIR} --noextract ${RAWDATA}/*gz
