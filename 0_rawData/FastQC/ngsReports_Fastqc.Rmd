@@ -9,8 +9,8 @@ output:
     fig_width: 10
     toc: yes
 params:
-    dataType: "Transcriptome"
-    species: "Hsapiens"
+    dataType: "Genome"
+    species: "Btaurus"
 ---
 
 ```{r setup, include=FALSE}
