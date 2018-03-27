@@ -31,18 +31,23 @@ for f1 in ${RAWDIR}/fastq/*R1.fastq.gz
 
   done
 
-# Check the adapters and create a file of the merged adapters
+# Check the adapters and create a file of all adapters
 MERGED=${RAWDIR}/adapters/combinedAdapters.fa
+if [ -e ${MERGED} ]
+then
+    echo "Previous version of ${MERGED} found. This will be deleted"
+else
+    echo "No eisting version of ${MERGED} found. Creating a blank file.
+    touch ${MERGED}
+fi
+
 for f in ${RAWDIR}/adapters/*fa
   do 
     # Set each adapter as a tab separated name and sequence (for fastqc compatability)
-    sed -n '1,2p' ${f} | sed -r 's/>//g' | perl -p -e 's/\n/\t/' > ${MERGED}
+    sed -n '1,2p' ${f} | sed -r 's/>//g' | perl -p -e 's/\n/\t/' >> ${MERGED}
     echo -e '\n' >> ${MERGED}
-    sed -n '3,4p' ${f} | sed -r 's/>//g' | perl -p -e 's/\n/\t/' > ${MERGED}
+    sed -n '3,4p' ${f} | sed -r 's/>//g' | perl -p -e 's/\n/\t/' >> ${MERGED}
     echo -e '\n' >> ${MERGED}
   done
 
-# Now sort & find unique sequences. If adapters are identical, this will only contain R1 & R2 adapters
-cat ${MERGED} | sort | uniq > ${MERGED}
-# Check the file manually before running FastQC
-
+# Check this manually to see if they all contain the same adapter
