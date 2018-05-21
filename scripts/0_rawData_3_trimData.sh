@@ -32,18 +32,26 @@ CORES=16
 
 for f1 in ${RAWDIR}/fastq/*R1.fastq.gz
   do
-    # Set the input filenames
+    ## Set the input filenames
     echo "Found ${f1}"
     f2=${f1%R1.fastq.gz}R2.fastq.gz
     echo "The R2 file should be ${f2}"
+
+    ## Output each sample to a separate directory for HiC-Pro
+    SAMPLID=$(echo ${f1} | sed -r 's/.+(CP-493[5-7]).+/\1/g')
+    OUTDIR=${TRIMDIR}/fastq/${SAMPLID}
+    ## Only make the directories if required
+    if [ ! -d ${OUTDIR} ]; then
+        mkdir -p ${OUTDIR}
+    fi
  
-    # Set the output filenames
-    out1=${TRIMDIR}/fastq/$(basename ${f1})
-    out2=${TRIMDIR}/fastq/$(basename ${f2})
+    ## Set the output filenames
+    out1=${OUTDIR}/$(basename ${f1})
+    out2=${OUTDIR}/$(basename ${f2})
     echo -e "Trimmed files will be written to\n\t${out1} and \n\t${out2}"
 
-    # Remove the adapters. 
-    # This dataset uses TrueSeq adapters so we don't need to specify them
+    ## Remove the adapters. 
+    ## This dataset uses TrueSeq adapters so we don't need to specify them
     AdapterRemoval \
       --gzip \
       --trimqualities \
@@ -55,7 +63,9 @@ for f1 in ${RAWDIR}/fastq/*R1.fastq.gz
       --output2 ${out2} \
       --file1 ${f1} \
       --file2 ${f2} 
+    
+    ## Run FastQC
+    fastqc -t ${CORES} -o ${TRIMDIR}/FastQC --noextract ${TRIMDIR}/fastq/${SAMPLID}/*
 
   done
 
-fastqc -t ${CORES} -o ${TRIMDIR}/FastQC --noextract ${TRIMDIR}/fastq/*
