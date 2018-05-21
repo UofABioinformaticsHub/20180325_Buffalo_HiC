@@ -28,5 +28,5 @@ samtools faidx water_buffalo_20180219_chr.fasta
 cut -f1,2 water_buffalo_20180219_chr.fasta > Ref/Buffalo/buffalo.sizes
 
 # get restriction fragments
-python ext/digest_genome.py -r G^CTAGC -o ext/Buffalo_NheI_fragment.bed Ref/Buffalo/water_buffalo_20180219_chr.fasta
+python ext/digest_genome.py -r G^CTAGC -o Ref/Buffalo/Buffalo_NheI_fragment.bed Ref/Buffalo/water_buffalo_20180219_chr.fasta
 
