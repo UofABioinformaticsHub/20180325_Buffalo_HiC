@@ -3,5 +3,8 @@
 .RData
 .Ruserdata
 *fastq.gz
+*fastq
+*bam
+*sam
 slurm/*
 Ref/*

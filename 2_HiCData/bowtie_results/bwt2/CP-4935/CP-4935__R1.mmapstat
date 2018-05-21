@@ -1,0 +1,9 @@
+## merge_statfiles.py
+## dir= bowtie_results/bwt2/CP-4935/
+## pattern= *_R1*.mapstat
+## Merging 1 files
+## Use /data/biohub/20180511_Ning_HiCow/Buffalo_HiC_out/bowtie_results/bwt2/CP-4935/2.Illumina_indexing-5.CP-4935_R1_water_buffalo_20180219.mapstat as template
+total	169465652
+mapped	163337556
+global	152212255
+local	11125301

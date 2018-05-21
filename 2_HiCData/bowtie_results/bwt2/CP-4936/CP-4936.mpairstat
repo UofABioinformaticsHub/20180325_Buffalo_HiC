@@ -1,0 +1,15 @@
+## merge_statfiles.py
+## dir= bowtie_results/bwt2/CP-4936/
+## pattern= *.pairstat
+## Merging 1 files
+## Use /data/biohub/20180511_Ning_HiCow/Buffalo_HiC_out/bowtie_results/bwt2/CP-4936/2.Illumina_indexing-6.CP-4936_water_buffalo_20180219.bwt2pairs.pairstat as template
+Total_pairs_processed	176714410	100.0
+Unmapped_pairs	1752038	0.991
+Low_qual_pairs	0	0.0
+Unique_paired_alignments	142220158	80.48
+Multiple_pairs_alignments	19652688	11.121
+Pairs_with_singleton	13089526	7.407
+Low_qual_singleton	0	0.0
+Unique_singleton_alignments	0	0.0
+Multiple_singleton_alignments	0	0.0
+Reported_pairs	142220158	80.48
