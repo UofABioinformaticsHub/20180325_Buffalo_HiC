@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-*fastq.gz
+*gz
 *fastq
 *bam
 *sam
