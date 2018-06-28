@@ -20,9 +20,6 @@ module load HiC-Pro/2.9.0-foss-2016b
 ROOTDIR=/data/biohub/20180325_Buffalo_HiC
 
 ##Run HiC-pro
-# $1 is the config
-# $2 is path to trimmedData
-# $3 is the outDir
 HiC-Pro -c ${ROOTDIR}/ext/config-buffalo.txt \
   -i ${ROOTDIR}/1_trimmedData/fastq \
   -o ${ROOTDIR}/2_HiCData
