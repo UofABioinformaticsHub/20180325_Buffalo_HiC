@@ -22,4 +22,4 @@ ROOTDIR=/data/biohub/20180325_Buffalo_HiC
 ##Run HiC-pro
 HiC-Pro -c ${ROOTDIR}/ext/config-buffalo.txt \
   -i ${ROOTDIR}/1_trimmedData/fastq \
-  -o ${ROOTDIR}/2_HiCData
+  -o ${ROOTDIR}/3_HiCData

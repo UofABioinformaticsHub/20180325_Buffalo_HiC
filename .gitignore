@@ -8,6 +8,6 @@
 *sam
 slurm/*
 Ref/*
-2_HiCData/hic_results/*
-2_HiCData/logs/*
-2_HiCData/*log
+3_HiCData/hic_results/*
+3_HiCData/logs/*
+3_HiCData/*log
