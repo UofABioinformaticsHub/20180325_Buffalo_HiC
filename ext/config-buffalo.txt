@@ -36,7 +36,7 @@ PAIR2_EXT = _R2
 FORMAT = phred33
 MIN_MAPQ = 0
 
-BOWTIE2_IDX_PATH = /data/biohub/20180511_Ning_HiCow/Ref/Buffalo/ 
+BOWTIE2_IDX_PATH = /data/biohub/20180325_Buffalo_HiC/Ref/Buffalo/
 BOWTIE2_GLOBAL_OPTIONS = --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end --reorder
 BOWTIE2_LOCAL_OPTIONS =  --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder
 
@@ -45,7 +45,7 @@ BOWTIE2_LOCAL_OPTIONS =  --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to
 #######################################################################
 
 REFERENCE_GENOME = water_buffalo_20180219 
-GENOME_SIZE = /data/biohub/20180511_Ning_HiCow/buffalo.sizes 
+GENOME_SIZE = /data/biohub/20180325_Buffalo_HiC/Ref/Buffalo/buffalo.sizes 
 CAPTURE_TARGET =
 
 #######################################################################
@@ -58,7 +58,7 @@ ALLELE_SPECIFIC_SNP =
 ## Digestion Hi-C
 #######################################################################
 
-GENOME_FRAGMENT = /data/biohub/20180511_Ning_HiCow/Buffalo_NheI_fragment.bed
+GENOME_FRAGMENT = /data/biohub/20180325_Buffalo_HiC/Ref/Buffalo/Buffalo_NheI_fragment.bed
 LIGATION_SITE = GATCGATC
 MIN_FRAG_SIZE = 
 MAX_FRAG_SIZE =
